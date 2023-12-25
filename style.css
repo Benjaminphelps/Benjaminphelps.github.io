@@ -3,11 +3,14 @@ body, html {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background: rgb(73, 145, 246);
+    background: rgb(255, 255, 255);
     overflow-x: hidden; /* Prevent horizontal scroll */
     overflow-y: auto; /* Enable vertical scroll */
 }
 
+main{
+    background: rgb(73, 145, 246);
+}
 /* Style for the canvas */
 canvas {
     position: absolute;
@@ -21,7 +24,7 @@ canvas {
 #header {
     background: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
-    padding: 10px 0;
+    padding: 0px 0;
     text-align: center;
     position: relative;
     width: 100%;
