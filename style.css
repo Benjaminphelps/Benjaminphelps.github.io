@@ -94,6 +94,7 @@ section {
 }
 
 .project {
+    border-radius: 25px;
     background: #f4f4f4;
     margin: 20px 0;
     padding: 15px;
@@ -101,8 +102,8 @@ section {
 
 footer {
     text-align: center;
-    padding: 10px 0;
-    background: #333;
+    padding: 10px;
+    background: rgb(73, 145, 246);
     color: #fff;
 }
 
@@ -139,4 +140,33 @@ footer {
     margin: 0 10px; /* Space out the links */
     text-decoration: none;
     /* Additional styling for the links */
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(0)
+        ;
+    }
+    to {
+        transform: translateY(-20px);
+    }
+}
+
+.header-content h1,
+.social-links a,
+nav ul li {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Stagger the animation */
+.header-content h1 {
+    animation-delay: 0.5s;
+}
+
+.social-links a {
+    animation-delay: 0.7s;
+}
+
+nav ul li {
+    animation-delay: 0.9s; /* Adjust as needed for each element */
 }
