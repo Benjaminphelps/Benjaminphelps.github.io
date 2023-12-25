@@ -60,12 +60,26 @@ function init() {
 
 function animate() {
     requestAnimationFrame(animate);
-    ctx.clearRect(0, 0, innerWidth, innerHeight);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    for (let sphere of spheres) {
-        sphere.update();
+    for (let i = 0; i < spheres.length; i++) {
+        spheres[i].update();
+        for (let j = i + 1; j < spheres.length; j++) {
+            const dx = spheres[i].x - spheres[j].x;
+            const dy = spheres[i].y - spheres[j].y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < 100) { // Adjust this value as needed
+                ctx.beginPath();
+                ctx.moveTo(spheres[i].x, spheres[i].y);
+                ctx.lineTo(spheres[j].x, spheres[j].y);
+                ctx.strokeStyle = 'rgba(204, 209, 217, 0.5)'; // Line color
+                ctx.stroke();
+            }
+        }
     }
 }
+
 
 init();
 animate();
