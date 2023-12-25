@@ -8,14 +8,39 @@ canvas.height = header.offsetHeight;
 
 const spheres = [];
 
+canvas.addEventListener('click', function(event) {
+    const rect = canvas.getBoundingClientRect();
+    const clickX = event.clientX - rect.left;
+    const clickY = event.clientY - rect.top;
+    const bumpRadius = 100; // Radius of effect
+    const bumpStrength = 0.7; // New velocity strength
+
+    spheres.forEach(sphere => {
+        const dx = clickX - sphere.x;
+        const dy = clickY - sphere.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < bumpRadius) {
+            const angle = Math.atan2(dy, dx);
+            sphere.dx = -Math.cos(angle) * bumpStrength;
+            sphere.dy = -Math.sin(angle) * bumpStrength;
+        }
+    });
+});
+
+
+
 class Sphere {
     constructor(x, y, radius, dx, dy) {
         this.x = x;
         this.y = y;
         this.radius = radius;
-        this.dx = dx; // Delta x - change in x
-        this.dy = dy; // Delta y - change in y
+        this.dx = dx;
+        this.dy = dy;
+        this.baseDx = dx; // Baseline velocity x
+        this.baseDy = dy; // Baseline velocity y
     }
+
 
     draw() {
         ctx.beginPath();
@@ -27,11 +52,13 @@ class Sphere {
     update() {
         // Check for boundary collision
         if (this.x + this.radius > canvas.width || this.x - this.radius < 0) {
-            this.dx = -this.dx; // Reverse direction
+            this.dx = -this.dx; // Reverse x direction
         }
         if (this.y + this.radius > canvas.height || this.y - this.radius < 0) {
-            this.dy = -this.dy; // Reverse direction
+            this.dy = -this.dy; // Reverse y direction
         }
+
+        // Gradually return to baseline velocity
 
         this.x += this.dx;
         this.y += this.dy;
