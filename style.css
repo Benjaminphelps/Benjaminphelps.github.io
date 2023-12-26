@@ -154,3 +154,50 @@ footer {
     /* Additional styling for the links */
 }
 
+.scroll-down-indicator {
+    position: absolute;
+    bottom: 10px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: bounce 2s infinite;
+    cursor: pointer; /* Optional: Changes the cursor on hover */
+}
+
+.scroll-down-indicator::before,
+.scroll-down-indicator::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    width: 2px;
+    height: 18px;
+    background-color: rgb(73, 145, 246); /* Adjust color as needed */
+    transform-origin: bottom;
+}
+
+.scroll-down-indicator::before {
+    transform: rotate(-45deg);
+    left: 14px;
+}
+
+.scroll-down-indicator::after {
+    transform: rotate(45deg);
+    right: 14px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-20px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+
