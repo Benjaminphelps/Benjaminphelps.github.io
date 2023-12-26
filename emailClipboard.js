@@ -1,4 +1,4 @@
-document.getElementById('emailbutton').addEventListener('click', function() {
+document.getElementById('emailButton').addEventListener('click', function() {
     // Copy email to clipboard
     navigator.clipboard.writeText('your.email@example.com').then(function() {
         // Show copied message
