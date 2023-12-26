@@ -29,7 +29,7 @@ canvas.addEventListener('click', function(event) {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    var emailToCopy = "your.email@example.com"; // Replace with your email
+    var emailToCopy = "ben.phelps27@gmail.com"; // Replace with your email
 
     var emailButton = document.getElementById('emailButton');
     var copyMessage = document.getElementById('copyMessage');
