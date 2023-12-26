@@ -1,5 +1,12 @@
+@font-face {
+    font-family: 'Circular';
+    src: url('circular-std-medium-500.ttf') format('opentype');
+    /* Add more formats if available for better compatibility */
+}
+
+
 body, html {
-    font-family: Arial, sans-serif;
+    font-family: 'Circular', sans-serif; /* Gotham-Black is now the primary font */
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -7,6 +14,8 @@ body, html {
     overflow-x: hidden; /* Prevent horizontal scroll */
     overflow-y: auto; /* Enable vertical scroll */
 }
+
+
 
 main{
     background: rgb(73, 145, 246);
@@ -33,6 +42,7 @@ canvas {
     flex-direction: column; /* Stack children vertically */
     justify-content: center; /* Center vertically */
     align-items: center; /* Center horizontally */
+    font-size: 30px;
 }
 #emailButton {
     background-color: transparent; /* Example background color */
@@ -133,7 +143,7 @@ footer {
     height: 100%;
 }
 
-.social-links {
+.social-links a {
     margin-top: 20px; /* Adjust as needed */
 }
 .social-links a {
@@ -142,31 +152,3 @@ footer {
     /* Additional styling for the links */
 }
 
-@keyframes fadeInUp {
-    from {
-        transform: translateY(0)
-        ;
-    }
-    to {
-        transform: translateY(-20px);
-    }
-}
-
-.header-content h1,
-.social-links a,
-nav ul li {
-    animation: fadeInUp 1s ease-out forwards;
-}
-
-/* Stagger the animation */
-.header-content h1 {
-    animation-delay: 0.5s;
-}
-
-.social-links a {
-    animation-delay: 0.7s;
-}
-
-nav ul li {
-    animation-delay: 0.9s; /* Adjust as needed for each element */
-}
