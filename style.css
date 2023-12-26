@@ -156,7 +156,7 @@ footer {
 
 .scroll-down-indicator {
     position: absolute;
-    bottom: 10px; /* Adjust as needed */
+    bottom: 10dvh; /* Set to 10vh so that the total distance from the top is 90vh */
     left: 50%;
     transform: translateX(-50%);
     width: 30px;
@@ -171,7 +171,7 @@ footer {
 .scroll-down-indicator::after {
     content: '';
     position: absolute;
-    bottom: 50px;
+    bottom: 0; /* Adjusted to 0 to align with the bottom of the indicator */
     width: 2px;
     height: 18px;
     background-color: rgb(73, 145, 246); /* Adjust color as needed */
