@@ -171,7 +171,7 @@ footer {
 .scroll-down-indicator::after {
     content: '';
     position: absolute;
-    bottom: 10px;
+    bottom: 50px;
     width: 2px;
     height: 18px;
     background-color: rgb(73, 145, 246); /* Adjust color as needed */
@@ -199,5 +199,7 @@ footer {
         transform: translateX(-50%) translateY(-10px);
     }
 }
+
+
 
 
