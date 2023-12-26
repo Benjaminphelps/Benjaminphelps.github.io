@@ -157,7 +157,7 @@ footer {
 
 .scroll-down-indicator {
     position: absolute;
-    bottom: 10dvh; /* Set to 10vh so that the total distance from the top is 90vh */
+    bottom: 20dvh; /* Set to 10vh so that the total distance from the top is 90vh */
     left: 50%;
     transform: translateX(-50%);
     width: 30px;
