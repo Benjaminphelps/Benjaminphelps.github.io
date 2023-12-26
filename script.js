@@ -28,6 +28,30 @@ canvas.addEventListener('click', function(event) {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    var emailToCopy = "your.email@example.com"; // Replace with your email
+
+    var emailButton = document.getElementById('emailButton');
+    var copyMessage = document.getElementById('copyMessage');
+
+    if (emailButton) {
+        emailButton.addEventListener('click', function() {
+            navigator.clipboard.writeText(emailToCopy).then(function() {
+                // Show the copied message
+                copyMessage.style.display = 'inline';
+
+                // Hide the message after 2 seconds
+                setTimeout(function() {
+                    copyMessage.style.display = 'none';
+                }, 2000);
+            }).catch(function(error) {
+                console.error('Error copying text: ', error);
+                // You can also show an error message to the user here
+            });
+        });
+    }
+});
+
 
 
 class Sphere {
@@ -174,6 +198,14 @@ function drawLinesAndSpheres() {
         }
     }
 }
+
+function myFunction() {
+     // Copy the text inside the text field
+    navigator.clipboard.writeText('ben.phelps27@gmail.com');
+  
+    // Alert the copied text
+    alert("Copied the text: " + copyText.value);
+  } 
 
 
 

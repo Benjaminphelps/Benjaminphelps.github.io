@@ -44,6 +44,7 @@ canvas {
     align-items: center; /* Center horizontally */
     font-size: 20px;
 }
+
 #emailButton {
     background-color: transparent; /* Example background color */
     color: rgb(73, 145, 246);
@@ -52,6 +53,7 @@ canvas {
     font-size: 1em; /* Adjust as needed */
     /* Additional styling */
 }
+
 a[href*="github.com"] i {
     color: rgb(73, 145, 246); /* GitHub icon color, change as needed */
 }
