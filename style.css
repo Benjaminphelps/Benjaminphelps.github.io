@@ -18,7 +18,8 @@ body, html {
 
 
 main{
-    background: rgb(73, 145, 246);
+    /*background: rgb(73, 145, 246);*/
+    background: rgb(200, 200, 246)
 }
 /* Style for the canvas */
 canvas {
