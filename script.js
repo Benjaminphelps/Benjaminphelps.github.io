@@ -199,15 +199,5 @@ function drawLinesAndSpheres() {
     }
 }
 
-function myFunction() {
-     // Copy the text inside the text field
-    navigator.clipboard.writeText('ben.phelps27@gmail.com');
-  
-    // Alert the copied text
-    alert("Copied the text: " + copyText.value);
-  } 
-
-
-
 init();
 animate();

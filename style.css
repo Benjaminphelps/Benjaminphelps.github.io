@@ -19,7 +19,7 @@ body, html {
 
 main{
     /*background: rgb(73, 145, 246);*/
-    background: rgb(200, 200, 246)
+    background: rgb(73, 145, 246)
 }
 /* Style for the canvas */
 canvas {
@@ -157,7 +157,7 @@ footer {
 
 .scroll-down-indicator {
     position: absolute;
-    bottom: 20dvh; /* Set to 10vh so that the total distance from the top is 90vh */
+    bottom: 15dvh; /* Set to 10vh so that the total distance from the top is 90vh */
     left: 50%;
     transform: translateX(-50%);
     width: 30px;
@@ -200,6 +200,7 @@ footer {
         transform: translateX(-50%) translateY(-10px);
     }
 }
+
 
 
 
