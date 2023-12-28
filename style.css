@@ -15,11 +15,9 @@ body, html {
     overflow-y: auto; /* Enable vertical scroll */
 }
 
-
-
 main{
-    /* background: rgb(100, 100, 100); */
-    background: rgb(73, 145, 246)
+    background: rgb(255, 255, 255);
+    /* background: rgb(73, 145, 246) */
 }
 /* Style for the canvas */
 canvas {
@@ -106,11 +104,22 @@ section {
     margin: 20px 0;
 }
 
-.project {
+.about {
     border-radius: 25px;
-    background: #f4f4f4;
+    /* background: #f4f4f4; */
+    background: rgb(73, 145, 246);
     margin: 20px 0;
     padding: 15px;
+    z-index: 2; /* Behind the text and nav */
+}
+
+.project {
+    border-radius: 25px;
+    /* background: #f4f4f4; */
+    background-color: #FFFF;
+    margin: 20px 0;
+    padding: 15px;
+    z-index: 1; /* Behind the text and nav */
 }
 
 footer {
