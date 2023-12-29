@@ -69,7 +69,7 @@ class Sphere {
     draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-        ctx.fillStyle = 'rgba(204, 209, 217, 1)'; // Sphere color
+        ctx.fillStyle = 'rgba(0,0,0,  0)'; // Sphere color
         ctx.fill();
     }
 
@@ -127,7 +127,7 @@ function init() {
     spheres.length = 0; // Clear the existing spheres
     const speed = 0.4; // Set a constant speed for all spheres
 
-    for (let i = 0; i < 30; i++) { // Adjust the number of spheres as desired
+    for (let i = 0; i <  40; i++) { // Adjust the number of spheres as desired
         let radius = 1 * 4 + 5; // Adjust size as needed
         let x = Math.random() * (canvas.width - radius * 2) + radius;
         let y = Math.random() * (canvas.height - radius * 2) + radius;
@@ -188,11 +188,11 @@ function drawLinesAndSpheres() {
             const dy = spheres[i].y - spheres[j].y;
             const distance = Math.sqrt(dx * dx + dy * dy);
 
-            if (distance < 100) { // Adjust this value as needed
+            if (distance < 300) { // Adjust this value as needed
                 ctx.beginPath();
                 ctx.moveTo(spheres[i].x, spheres[i].y);
                 ctx.lineTo(spheres[j].x, spheres[j].y);
-                ctx.strokeStyle = 'rgba(204, 209, 217, 0.5)'; // Line color
+                ctx.strokeStyle = 'rgba(113, 5, 185, 0.5)'; // Line color
                 ctx.stroke();
             }
         }
