@@ -1,34 +1,34 @@
 @font-face {
     font-family: 'Circular';
     src: url('circular-std-medium-500.ttf') format('opentype');
-    /* Add more formats if available for better compatibility */
 }
 
+* {
+    box-sizing: border-box;
+  }
 
 body, html {
-    font-family: 'Circular', sans-serif; /* Gotham-Black is now the primary font */
+    font-family: 'Circular', sans-serif; 
     line-height: 1.6;
     color: rgb(255, 255, 255);
-    /* -webkit-text-fill-color: rgb(255, 255, 255); */
     margin: 0;
     padding: 0;
     background: rgb(0,0,0);
-    overflow-x: hidden; /* Prevent horizontal scroll */
-    overflow-y: auto; /* Enable vertical scroll */
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 main{
     background: black;
-    /* background: rgb(73, 145, 246) */
 }
-/* Style for the canvas */
+
 canvas {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; /* Behind the text */
+    z-index: 1; 
 }
 
 #header {
@@ -37,30 +37,28 @@ canvas {
     text-align: center;
     position: relative;
     width: 100%;
-    height: 100vh; /* Adjust this height as needed */
-    display: flex; /* Enable Flexbox */
-    flex-direction: column; /* Stack children vertically */
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
+    height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
     font-size: 20px;
 }
 
 #emailButton {
-    background-color: transparent; /* Example background color */
+    background-color: transparent; 
     color: rgb(255, 255, 255);
-    border: none; /* Removes the default border */
-    cursor: pointer; /* Changes the cursor on hover */
-    font-size: 1em; /* Adjust as needed */
-    /* Additional styling */
+    border: none; 
+    cursor: pointer;
+    font-size: 1em; 
 }
 
 a[href*="github.com"] i {
-    color: rgb(255, 255, 255); /* GitHub icon color, change as needed */
+    color: rgb(255, 255, 255);
 }
 
-/* Style for LinkedIn icon */
 a[href*="linkedin.com"] i {
-    color: rgb(255, 255, 255); /* LinkedIn icon color, change as needed */
+    color: rgb(255, 255, 255); 
 }
 #floatingSpheresCanvas {
     position: absolute;
@@ -68,15 +66,13 @@ a[href*="linkedin.com"] i {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; /* Behind the text and nav */
+    z-index: 1; 
 }
-
 
 .header-content {
     position: relative;
-    z-index: 2; /* Above the canvas */
-    text-align: center; /* Example text styling */
-    /* Additional styling for your text goes here */
+    z-index: 2; 
+    text-align: center; 
 }
 
 
@@ -106,20 +102,18 @@ section {
 
 .about {
     border-radius: 25px;
-    /* background: #f4f4f4; */
     background: rgba(113, 5, 185, 0.5);
     margin: 20px 0;
     padding: 15px;
-    z-index: 2; /* Behind the text and nav */
+    z-index: 2; 
 }
 
 .project {
     border-radius: 25px;
-    /* background: #f4f4f4; */
     background: rgba(113, 5, 185, 0.5);
     margin: 20px 0;
     padding: 15px;
-    z-index: 1; /* Behind the text and nav */
+    z-index: 1;
 }
 
 footer {
@@ -143,7 +137,7 @@ footer {
 
 .video-responsive {
     position: relative;
-    padding-bottom: 56.25%; /* Aspect ratio */
+    padding-bottom: 56.25%; 
     height: 0;
     overflow: hidden;
 }
@@ -157,17 +151,16 @@ footer {
 }
 
 .social-links a {
-    margin-top: 20px; /* Adjust as needed */
+    margin-top: 20px;
 }
 .social-links a {
-    margin: 0 10px; /* Space out the links */
+    margin: 0 10px;
     text-decoration: none;
-    /* Additional styling for the links */
 }
 
 .scroll-down-indicator {
     position: absolute;
-    bottom: 15dvh; /* Set to 10vh so that the total distance from the top is 90vh */
+    bottom: 15dvh;
     left: 50%;
     transform: translateX(-50%);
     width: 30px;
@@ -175,17 +168,17 @@ footer {
     border-radius: 50%;
     box-sizing: border-box;
     animation: bounce 2s infinite;
-    cursor: pointer; /* Optional: Changes the cursor on hover */
+    cursor: pointer; 
 }
 
 .scroll-down-indicator::before,
 .scroll-down-indicator::after {
     content: '';
     position: absolute;
-    bottom: 0; /* Adjusted to 0 to align with the bottom of the indicator */
+    bottom: 0; 
     width: 2px;
     height: 18px;
-    background-color: rgba(113, 5, 185, 1); /* Adjust color as needed */
+    background-color: rgba(113, 5, 185, 1); 
     transform-origin: bottom;
 }
 
@@ -198,6 +191,41 @@ footer {
     transform: rotate(45deg);
     right: 14px;
 }
+
+.project-wrapper {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 0;
+    scroll-behavior: smooth;
+}
+
+.project-card {
+    flex: 0 0 auto;
+    width: 300px;
+    height: 200px;
+    background-color: rgba(113, 5, 185, 1);
+    margin: 0 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.info-box {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.project-card-selected {
+    border: 2px solid #007bff; 
+}
+
+
 
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {

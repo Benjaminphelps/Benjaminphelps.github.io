@@ -29,7 +29,7 @@ canvas.addEventListener('click', function(event) {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    var emailToCopy = "ben.phelps27@gmail.com"; // Replace with your email
+    var emailToCopy = "ben.phelps27@gmail.com"; 
 
     var emailButton = document.getElementById('emailButton');
     var copyMessage = document.getElementById('copyMessage');
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 2000);
             }).catch(function(error) {
                 console.error('Error copying text: ', error);
-                // You can also show an error message to the user here
+              
             });
         });
     }
@@ -127,8 +127,8 @@ function init() {
     spheres.length = 0; // Clear the existing spheres
     const speed = 0.4; // Set a constant speed for all spheres
 
-    for (let i = 0; i <  40; i++) { // Adjust the number of spheres as desired
-        let radius = 1 * 4 + 5; // Adjust size as needed
+    for (let i = 0; i <  40; i++) { 
+        let radius = 1 * 4 + 5; 
         let x = Math.random() * (canvas.width - radius * 2) + radius;
         let y = Math.random() * (canvas.height - radius * 2) + radius;
 
@@ -225,7 +225,82 @@ function scrollHandler() {
   fadeOutOnScroll(indicator);
 }
 
+
 window.addEventListener('scroll', scrollHandler);
+
+const projectData = [
+    { id: '1', title: 'Project 1', description: 'I used a raspberry pi to display a users currently playing song album cover (via spotify API) onto an OLED screen.', url: 'google.com' },
+    { id: '2', title: 'Project 2', description: 'Description of Project 2...' },
+    { id: '3', title: 'Project 3', description: 'Description of Project 3...' },
+    { id: '4', title: 'Project 4', description: 'Description of Project 4...' },
+    { id: '5', title: 'Project 5', description: 'Description of Project 5...' },
+    { id: '6', title: 'Project 6', description: 'Description of Project 6...' },
+    
+];
+
+document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', function() {
+        const projectId = this.getAttribute('data-project');
+        const project = projectData.find(p => p.id === projectId);
+
+        let infoContent = 'Information not found';
+        if (project) {
+            infoContent = `<strong>${project.title}</strong><p>${project.description}</p>`;
+        }
+
+        document.querySelector('.info-content').innerHTML = infoContent;
+        document.querySelector('.info-box').style.display = 'block';
+    });
+});
+
+// Function to update the info box based on the selected project
+function updateInfoBox(projectId) {
+    const project = projectData.find(p => p.id === projectId);
+    let infoContent = 'Information not found';
+    if (project) {
+        infoContent = `<strong>${project.title}</strong><p>${project.description}</p>`;
+    }
+    document.querySelector('.info-content').innerHTML = infoContent;
+    document.querySelector('.info-box').style.display = 'block'; // Ensure info box is visible
+
+    if (project.url) {
+        const link = document.createElement('a');
+        link.setAttribute('href', project.url);
+        link.textContent = 'Learn More'; // Text for the hyperlink
+        link.setAttribute('target', '_blank'); // Open in a new tab
+
+        projectDiv.appendChild(link);
+    }
+}
+
+// Function to handle the selection of a project card
+function selectProjectCard(card) {
+    // Remove selected class from all cards
+    document.querySelectorAll('.project-card').forEach(c => c.classList.remove('project-card-selected'));
+
+    // Add selected class to the clicked card
+    card.classList.add('project-card-selected');
+
+    // Update the info box based on the selected project
+    const projectId = card.getAttribute('data-project');
+    updateInfoBox(projectId);
+}
+
+// Add click event listeners to all project cards
+document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', function() {
+        selectProjectCard(this);
+    });
+});
+
+// Default to Project 1 being selected on page load
+window.onload = function() {
+    const defaultSelectedCard = document.querySelector('.project-card[data-project="1"]');
+    if (defaultSelectedCard) {
+        selectProjectCard(defaultSelectedCard);
+    }
+};
+
 
 init();
 animate();
